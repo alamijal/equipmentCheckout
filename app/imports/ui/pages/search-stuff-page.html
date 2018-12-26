@@ -1,0 +1,95 @@
+<template name="Search_Stuff_Page">
+<div class="ui search container">
+    {{#If_Logged_In}}
+      <h2 style="padding-top:3.5%;" class="center aligned ui header">Search Recipes by Name</h2>
+      <div class="search">
+        <form class="center aligned button name">
+          <input type="text" id="searchValue" placeholder="Recipe Name" required>
+          <button type="submit">Search</button>
+        </form>
+      </div>
+
+      <h2 class="center aligned ui header">Search Recipes by Category</h2>
+
+      <div class="ui three column search grid">
+        <div class="column">
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="/images/coffee.jpg">
+            </div>
+            <div class="content">
+              <a class="header" href="{{pathFor 'List_Searched_Stuff_Page_Breakfast' _id=stuff._id}}">Breakfast</a>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="/images/burger.jpeg">
+            </div>
+            <div class="content">
+              <a class="header" href="{{pathFor 'List_Searched_Stuff_Page_Lunch' _id=stuff._id}}">Lunch</a>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="/images/salmon.jpeg">
+            </div>
+            <div class="content">
+              <a class="header" href="{{pathFor 'List_Searched_Stuff_Page_Dinner' _id=stuff._id}}">Dinner</a>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="/images/macarons.jpeg">
+            </div>
+            <div class="content">
+              <a class="header" href="{{pathFor 'List_Searched_Stuff_Page_Dessert' _id=stuff._id}}">Dessert</a>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="/images/appetizer.png">
+            </div>
+            <div class="content">
+              <a class="header" href="{{pathFor 'List_Searched_Stuff_Page_Appetizers' _id=stuff._id}}">Appetizers</a>
+            </div>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui fluid card">
+            <div class="image">
+              <img src="/images/drinks.png">
+            </div>
+            <div class="content">
+              <a class="header" href="{{pathFor 'List_Searched_Stuff_Page_Drinks' _id=stuff._id}}">Drinks</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    {{>Search_Ingredients_Page}}
+    {{/If_Logged_In}}
+</div>
+      </template>
+      <template name="Search_Ingredients_Page">
+          <h2 class="center aligned ui header">Search Recipes by Ingredient</h2>
+          <div class="search">
+            <form class="center aligned button ingredient">
+              <input type="text" id="searchIngredientValue" placeholder="Ingredient" required>
+              <button type="submit">Search</button>
+            </form>
+          </div>
+
+      </template>
+
+
+
+
+
+
