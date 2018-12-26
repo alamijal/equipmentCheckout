@@ -1,1 +1,5 @@
 .idea/
+app/.idea/workspace.xml
+*.iml
+*.xml
+workspace.xml
