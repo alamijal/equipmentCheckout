@@ -5,22 +5,42 @@
     <div style="padding-top: 20px" class="ui  container">
 
      <form class="ui form">
-       <h4 class="ui dividing header">Add Recipe</h4>
+       <h4 class="ui dividing header">New Checkout</h4>
+       <div class="fields">
+         <div class ="sixteen wide field">
+           {{>afQuickField name='first'}}
+         </div>
+         <div class = "sixteen wide field">
+           {{>afQuickField name='last'}}
+         </div>
+
+       </div>
+       <div class="fields">
+         <div class = "sixteen wide field">
+           {{>afQuickField name='number'}}
+         </div>
+         <div class ="sixteen wide field">
+           {{>afQuickField name='date'}}
+         </div>
+         <div class = "sixteen wide field">
+           {{>afQuickField name='time'}}
+         </div>
+       </div>
+
+       <div class="fields">
+         <div class ="sixteen wide field">
+           {{>afQuickField name='equipmentName'}}
+         </div>
+         <div class = "sixteen wide field">
+           {{>afQuickField name='equipmentType'}}
+         </div>
+
+       </div>
+
        <div class = "sixteen wide field">
-         {{>afQuickField name='recipe'}}
+         {{>afQuickField name='comments'}}
        </div>
-
-       <div class = "thirty wide field">
-         {{>afQuickField name='ingredients'}}
-       </div>
-       <div class = "thirty wide field">
-         {{>afQuickField name='directions'}}
-       </div>
-       <div class = "thirty wide field">
-         {{>afQuickField name='cuisineType'}}
-       </div>
-
-
+       
 
      </form>
       <!--<button type="insert" class="btn btn-primary">Submit</button>-->

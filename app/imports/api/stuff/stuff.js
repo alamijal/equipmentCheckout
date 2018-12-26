@@ -9,57 +9,79 @@ export const Stuff = new Mongo.Collection('Stuff');
  * Create the schema for Stuff
  */
 export const StuffSchema = new SimpleSchema({
-  recipe: {
-    label: 'Recipe Title',
+  first: {
+    label: 'First Name',
     type: String,
     optional: false,
     max: 50,
     autoform: {
       group: 'Stuff',
-      placeholder: 'Chocolate Chip Cookies',
+      placeholder: 'John',
     },
   },
-  ingredients: {
-    label: 'Ingredients',
+  last: {
+    label: 'Last Name',
     type: String,
     optional: false,
-    max: 10000,
+    max: 50,
     autoform: {
-      type: 'textarea',
       group: 'Stuff',
-      placeholder: '1 cup butter, softened\n' +
-        '1 cup white sugar\n' +
-        '1 cup packed brown sugar\n' +
-        '2 eggs\n' +
-        '2 teaspoons vanilla extract\n' +
-        '1 teaspoon baking soda\n' +
-        ' \n' +
-        '2 teaspoons hot water\n' +
-        '1/2 teaspoon salt\n' +
-        '3 cups all-purpose flour\n' +
-        '2 cups semisweet chocolate chips\n' +
-        '1 cup chopped walnuts',
+      placeholder: 'Doe',
     },
   },
-  directions: {
-    label: 'Directions',
+  number: {
+    label: 'Phone Number',
     type: String,
     optional: false,
-    max: 10000,
+    max: 50,
     autoform: {
-      type: 'textarea',
       group: 'Stuff',
-      placeholder: 'Preheat oven to 350 degrees F (175 degrees C).\n' +
-        'Cream together the butter, white sugar, and brown sugar until smooth. ' +
-        'Beat in the eggs one at a time, then stir in the vanilla.\n' +
-        'Dissolve baking ' +
-        'soda in hot water. Add to batter along with salt. Stir in flour, chocolate ' +
-        'chips, and nuts. Drop by large spoonfuls onto ungreased pans.\n' +
-        'Bake for about 10 minutes in the preheated oven, or until edges are nicely browned',
+      placeholder: '123-456-7890',
     },
   },
-  cuisineType: {
-    label: 'Cuisine Type',
+  time: {
+    label: 'Checkout Time',
+    type: String,
+    optional: false,
+    max: 50,
+    autoform: {
+      group: 'Stuff',
+      type: 'time',
+    },
+  },
+  date: {
+    label: 'Date',
+    type: String,
+    optional: false,
+    max: 50,
+    autoform: {
+      group: 'Stuff',
+      type: 'date',
+    },
+  },
+  equipmentName: {
+    label: 'Item Name & Number',
+    type: String,
+    optional: false,
+    max: 50,
+    autoform: {
+      group: 'Stuff',
+      placeholder: 'HDMI to VGA adapter #2',
+    },
+  },
+  comments: {
+    label: 'Comments',
+    type: String,
+    optional: true,
+    max: 100,
+    autoform: {
+      type: 'text',
+      group: 'Stuff',
+    },
+  },
+
+  equipmentType: {
+    label: 'Equipment Type',
     type: String,
     optional: false,
     max: 20,
@@ -68,10 +90,9 @@ export const StuffSchema = new SimpleSchema({
       placeholder: '123-456-1234',
       type: 'select-radio-inline',
       options: function () {
-        return [{ label: 'Breakfast', value: 'Breakfast' },
-        { label: 'Lunch', value: 'Lunch' }, { label: 'Dinner', value: 'Dinner' },
-        { label: 'Dessert', value: 'Dessert' }, { label: 'Appetizers', value: 'Appetizers' },
-        { label: 'Drinks', value: 'Drinks' }];
+        return [{ label: 'Laptop', value: 'Laptop' },
+        { label: 'Adapter', value: 'Adapter' }, { label: 'Charger', value: 'Charger' },
+        { label: 'Other', value: 'Other' }];
       },
     },
   },
