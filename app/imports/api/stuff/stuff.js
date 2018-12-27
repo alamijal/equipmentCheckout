@@ -49,6 +49,26 @@ export const StuffSchema = new SimpleSchema({
       type: 'time',
     },
   },
+  checkinTime: {
+    label: 'Check-in Time',
+    type: String,
+    optional: false,
+    max: 50,
+    autoform: {
+      group: 'Stuff',
+      type: 'time',
+    },
+  },
+  checkinDate: {
+    label: 'Check-In Date',
+    type: String,
+    optional: false,
+    max: 50,
+    autoform: {
+      group: 'Stuff',
+      type: 'date',
+    },
+  },
   date: {
     label: 'Date',
     type: String,
