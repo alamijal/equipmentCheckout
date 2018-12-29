@@ -69,6 +69,13 @@ FlowRouter.route('/list', {
   },
 });
 
+FlowRouter.route('/comments', {
+  name: 'View_Comments',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'View_Comments' });
+  },
+});
+
 FlowRouter.route('/add', {
   name: 'Add_Stuff_Page',
   action() {

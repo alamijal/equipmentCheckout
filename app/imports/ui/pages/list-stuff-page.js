@@ -10,3 +10,11 @@ Template.List_Stuff_Page.helpers({
     return Stuff.find();
   },
 });
+Template.View_Comments.helpers({
+  getDoc() {
+    return Stuff.findOne(FlowRouter.getParam('_id'));
+  },
+  stuffCollection() {
+    return Stuff;
+  },
+});
