@@ -1,0 +1,49 @@
+
+<template name="History_Page">
+  {{#If_Logged_In}}
+    <div style="padding-bottom: 110px" class="ui container">
+      {{#if Template.subscriptionsReady}}
+        <h class="ui dividing header">Checkout History</h>
+        <table style="margin-top: 20px" class="ui striped celled table">
+          <thead>
+          <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Checkout Date</th>
+            <th>Item</th>
+            <th>Equipment Type</th>
+            <th>View</th>
+            <th>Check-In</th>
+
+            {{#If_Logged_In}}
+
+            {{/If_Logged_In}}
+          </tr>
+          </thead>
+
+          <tbody>
+          {{#each stuff in stuffList}}
+            <tr>
+              <td>{{stuff.first}}</td>
+              <td>{{stuff.last}}</td>
+              <td>{{stuff.date}}</td>
+              <td>{{stuff.equipmentName}}</td>
+              <td>{{stuff.equipmentType}}</td>
+              <td><a class="{{ isActiveRoute 'View_Full_Recipe'}}
+              item" href="{{ pathFor 'View_Full_Recipe' _id=stuff._id}}">View More Details</a></td>
+              <td><a class="{{ isActiveRoute 'Edit'}}
+              item" href="{{ pathFor 'Edit_Stuff_Page' _id=stuff._id}}">Check-In</a></td>
+
+            </tr>
+          {{/each}}
+          </tbody>
+        </table>
+      {{else}}
+        {{> Loading}}
+      {{/if}}
+    </div>
+  {{/If_Logged_In}}
+</template>
+
+
+

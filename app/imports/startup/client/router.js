@@ -54,6 +54,12 @@ FlowRouter.route('/nameresults', {
     BlazeLayout.render('App_Body', { main: 'List_Searched_Stuff_Page_Name' });
   },
 });
+FlowRouter.route('/history', {
+  name: 'History_Page',
+  action() {
+    BlazeLayout.render('App_Body', { main: 'History_Page' });
+  },
+});
 
 FlowRouter.route('/ingredientresults', {
   name: 'List_Searched_Stuff_Page_Ingredient',

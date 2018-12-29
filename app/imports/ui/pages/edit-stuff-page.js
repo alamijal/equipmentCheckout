@@ -1,7 +1,11 @@
 import { AutoForm } from 'meteor/aldeed:autoform';
+import { Tracker } from 'meteor/tracker';
+import { Mongo } from 'meteor/mongo';
+import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Template } from 'meteor/templating';
 import { Stuff } from '../../api/stuff/stuff.js';
+
 
 /* eslint-disable object-shorthand, no-unused-vars */
 
@@ -17,7 +21,7 @@ AutoForm.hooks({
      * @param result The result of form submission.
      */
     onSuccess: function onSuccess(formType, result) {
-      FlowRouter.go('List_Stuff_Page');
+      FlowRouter.go('History_Page');
     },
   },
 });
@@ -30,4 +34,5 @@ Template.Edit_Stuff_Page.helpers({
     return Stuff;
   },
 });
+
 
