@@ -19,3 +19,5 @@ import './list-searched-stuff-page.js';
 import './edit-page.html';
 import './edit-page.js';
 
+import './past-checkouts.html';
+import './past-checkouts.js';

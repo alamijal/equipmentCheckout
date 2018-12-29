@@ -1,6 +1,8 @@
 import { Mongo } from 'meteor/mongo';
 import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 
+
+
 /* eslint-disable object-shorthand */
 
 export const Stuff = new Mongo.Collection('Stuff');
@@ -47,6 +49,26 @@ export const StuffSchema = new SimpleSchema({
     autoform: {
       group: 'Stuff',
       type: 'time',
+    },
+  },
+  checkinTime: {
+    label: 'Check-in Time',
+    type: String,
+    optional: false,
+    max: 50,
+    autoform: {
+      group: 'Stuff',
+      type: 'time',
+    },
+  },
+  checkinDate: {
+    label: 'Check-In Date',
+    type: String,
+    optional: false,
+    max: 50,
+    autoform: {
+      group: 'Stuff',
+      type: 'date',
     },
   },
   date: {
@@ -96,8 +118,9 @@ export const StuffSchema = new SimpleSchema({
       },
     },
   },
-
 });
+
 
 Stuff.attachSchema(StuffSchema);
 console.log('hello');
+// noinspection JSUnresolvedVariable

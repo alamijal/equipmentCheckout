@@ -6,31 +6,24 @@
                   doc=getDoc  resetOnSuccess=true}}
         <div style="padding-top: 20px" class="ui  container">
 
-
-
           <form class="ui form">
-            <div class="ui fluid centered card">
+            <h4 class="ui dividing header">Check-In Equipment</h4>
+            <h4  class="ui sub header">{{getDoc.equipmentName}}</h4>
+            <div class = "sixteen wide field">
+              {{>afQuickField name='checkinTime'}}
+            </div>
 
-              <div class="content">
-
-                <h2 style="color: #F15A24" class="ui header">{{getDoc.recipe}}</h2>
-                <h4 style="color: #F15A24" class="ui sub header">Ingredients</h4>
-                <div class="description">
-                  <span class="pre"> {{getDoc.ingredients}} </span>
-                </div>
-
-                <h4 style="color: #F15A24" class="ui sub header">Directions</h4>
-
-                <div  class="description">
-                  <span class="pre">{{getDoc.directions}}</span>
-                </div>
-
-              </div>
+            <div class = "thirty wide field">
+              {{>afQuickField name='checkinDate'}}
             </div>
 
 
-
           </form>
+          <button type="insert" class="ui button">
+            Check-In
+          </button>
+
+
           <!--<button type="insert" class="btn btn-primary">Submit</button>-->
 
 
