@@ -75,7 +75,7 @@ FlowRouter.route('/list', {
   },
 });
 
-FlowRouter.route('/comments', {
+FlowRouter.route('/comments/:_id', {
   name: 'View_Comments',
   action() {
     BlazeLayout.render('App_Body', { main: 'View_Comments' });

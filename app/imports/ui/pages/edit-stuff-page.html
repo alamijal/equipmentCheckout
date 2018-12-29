@@ -34,3 +34,44 @@
   {{/If_Logged_In}}
 
 </template>
+<template name="View_Comments">
+  {{#If_Logged_In}}
+    <div style="padding-top: 20px" class = "ui viewFull container">
+      {{#autoForm collection=stuffCollection template="semanticUI" id="EditStuffForm"
+                  type="update"
+                  doc=getDoc  resetOnSuccess=true}}
+        <div style="padding-top: 20px" class="ui  container">
+
+
+
+          <form class="ui form">
+            <div class="ui fluid centered card">
+
+              <div class="content">
+
+                <h2 style="color: #F15A24" class="ui header">{{getDoc.comments}}</h2>
+                <h4 style="color: #F15A24" class="ui sub header">Ingredients</h4>
+                <div class="description">
+
+                </div>
+
+                <h4 style="color: #F15A24" class="ui sub header">Directions</h4>
+
+
+
+              </div>
+            </div>
+
+
+
+          </form>
+          <!--<button type="insert" class="btn btn-primary">Submit</button>-->
+
+
+
+        </div>
+      {{/autoForm}}
+    </div>
+  {{/If_Logged_In}}
+
+</template>
