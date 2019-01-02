@@ -1,20 +1,18 @@
 <template name="Edit_Stuff_Page">
   {{#If_Logged_In}}
     <div style="padding-top: 20px" class = "ui viewFull container">
-      {{#autoForm collection=stuffCollection template="semanticUI" id="EditStuffForm"
-                  type="update"
-                  doc=getDoc  resetOnSuccess=true}}
+      {{#autoForm collection=historyCollection template="semanticUI" id="AddStuffForm" type="insert" doc=getDoc resetOnSuccess=true}}
         <div style="padding-top: 20px" class="ui  container">
 
           <form class="ui form">
             <h4 class="ui dividing header">Check-In Equipment</h4>
             <h4  class="ui sub header">{{getDoc.equipmentName}}</h4>
             <div class = "sixteen wide field">
-              {{>afQuickField name='checkinTime'}}
+              {{>afQuickField name='time2'}}
             </div>
 
             <div class = "thirty wide field">
-              {{>afQuickField name='checkinDate'}}
+              {{>afQuickField name='date2'}}
             </div>
 
 
