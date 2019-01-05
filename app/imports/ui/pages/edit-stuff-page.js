@@ -32,3 +32,10 @@ Template.Edit_Stuff_Page.helpers({
   },
 });
 
+Template.Edit_Stuff_Page.events({
+  'click .ui button'() {
+    const curr = Stuff.findOne(FlowRouter.getParam('_id'));
+    Stuff.remove(curr._id);
+  },
+});
+
