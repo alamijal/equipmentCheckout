@@ -1,10 +1,7 @@
 import { AutoForm } from 'meteor/aldeed:autoform';
-import { Tracker } from 'meteor/tracker';
-import { Mongo } from 'meteor/mongo';
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
 import { FlowRouter } from 'meteor/kadira:flow-router';
 import { Template } from 'meteor/templating';
-import { Stuff } from '../../api/stuff/stuff.js';
+import { Stuff, History } from '../../api/stuff/stuff.js';
 
 
 /* eslint-disable object-shorthand, no-unused-vars */
@@ -30,18 +27,15 @@ Template.Edit_Stuff_Page.helpers({
   getDoc() {
     return Stuff.findOne(FlowRouter.getParam('_id'));
   },
-  stuffCollection() {
-    return Stuff;
+  historyCollection() {
+    return History;
   },
 });
 
-Template.View_Comments.helpers({
-  getDoc() {
-    return Stuff.findOne(FlowRouter.getParam('_id'));
-  },
-  stuffCollection() {
-    return Stuff;
+Template.Edit_Stuff_Page.events({
+  'click .ui button'() {
+    const curr = Stuff.findOne(FlowRouter.getParam('_id'));
+    Stuff.remove(curr._id);
   },
 });
-
 

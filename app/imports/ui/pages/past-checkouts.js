@@ -1,12 +1,12 @@
 import { Template } from 'meteor/templating';
-import { Stuff } from '../../api/stuff/stuff.js';
+import { History } from '../../api/stuff/stuff.js';
 
 Template.History_Page.helpers({
 
   /**
    * @returns {*} All of the Stuff documents.
    */
-  stuffList() {
-    return Stuff.find();
+  historyList() {
+    return History.find();
   },
 });
