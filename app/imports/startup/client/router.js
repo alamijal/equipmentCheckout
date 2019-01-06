@@ -108,12 +108,7 @@ FlowRouter.route('/stuff/:_id', {
     BlazeLayout.render('App_Body', { main: 'View__Full_Recipe' });
   },
 });
-FlowRouter.route('/checkin', {
-  name: 'Edit_Stuff_Page',
-  action() {
-    BlazeLayout.render('App_Body', { main: 'Edit_Stuff_Page' });
-  },
-});
+
 FlowRouter.route('/edit/:_id', {
   name: 'Edit_Page',
   action() {
