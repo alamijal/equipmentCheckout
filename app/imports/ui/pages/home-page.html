@@ -1,47 +1,66 @@
 <template name="Home_Page">
 
+    {{#If_Logged_In}}
+      <div style="padding-bottom: 110px" class="ui container">
+        {{#if Template.subscriptionsReady}}
+          <div class="ui borderless main button menu">
+          <div class="ui header"><h2>CURRENT CHECKOUTS</h2></div>
+            <div class="right menu">
+              <div class="item">
+                <button class="ui positive button">
+                  NEW CHECKOUT
+                </button>
+              </div>
+              <div class="item">
+                <button class="ui positive button">
+                  CHECK-IN
+                </button>
+              </div>
+            </div>
 
-  <div class="ui grid  container">
-    <div class="ui very relaxed grid">
-      <div class="three column row">
-        <div class="column">
-          <a class="ui fluid card" href="{{pathFor 'Add_Stuff_Page' _id=stuff._id}}">
-            <div class="ui image">
-              <img src="/images/upload.png">
+
             </div>
-            <div class="content">
-              <a class="ui center aligned header">ADD A RECIPE</a>
-            </div>
-          </a>
-        </div>
-        <div class="column">
-          <a class="ui fluid card" href="{{pathFor 'Search_Stuff_Page' _id=stuff._id}}">
-            <div class="image">
-              <img src="/images/search-01.png">
-            </div>
-            <div class="content">
-              <a class="ui center aligned header">SEARCH A RECIPE</a>
-            </div>
-          </a>
-        </div>
-        <div class="column">
-          <a class="ui fluid card" href="{{pathFor 'List_Stuff_Page' _id=stuff._id}}">
-            <div class="image">
-              <img src="/images/view.png">
-            </div>
-            <div class="content">
-              <a class="ui center aligned header">VIEW ALL RECIPES</a>
-            </div>
-          </a>
-        </div>
+
+          <table style="margin-top: 20px" class="ui striped celled table">
+            <thead>
+            <tr>
+              <th>First Name</th>
+              <th>Last Name</th>
+              <th>Checkout Date</th>
+              <th>Checkout Time</th>
+              <th>Item</th>
+              <th>Equipment Type</th>
+              <th>View</th>
+              <th>Check-In</th>
+
+              {{#If_Logged_In}}
+
+              {{/If_Logged_In}}
+            </tr>
+            </thead>
+
+            <tbody>
+            {{#each stuff in stuffList}}
+              <tr>
+                <td>{{stuff.first}}</td>
+                <td>{{stuff.last}}</td>
+                <td>{{stuff.date}}</td>
+                <td>{{stuff.time}}</td>
+                <td>{{stuff.equipmentName}}</td>
+                <td>{{stuff.equipmentType}}</td>
+                <td><a class="{{ isActiveRoute 'Edit'}}
+              item" href="{{ pathFor 'View_Comments' _id=stuff._id}}">View Comments</a></td>
+                <td><a class="{{ isActiveRoute 'Edit'}}
+              item" href="{{ pathFor 'Edit_Stuff_Page' _id=stuff._id}}">Check-In</a></td>
+
+              </tr>
+            {{/each}}
+            </tbody>
+          </table>
+        {{else}}
+          {{> Loading}}
+        {{/if}}
       </div>
-
-
-    </div>
-
-
-  </div>
-  <div class="ui bottom attached right floated header">DON'T GO ANY FURTHER.</div>
-
+    {{/If_Logged_In}}
 
 </template>

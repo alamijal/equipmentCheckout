@@ -126,3 +126,7 @@ body, html {
   background-color: #F6F5F2;
   padding-bottom: 3.5%;
 }
+.ui.borderless.main.button.menu {
+  border: none;
+}
+
