@@ -3,14 +3,17 @@
     <div class="ui borderless top aligned menu">
       <div class="homepage container">
 
-        <div class="ui secondary menu" href="{{pathFor 'Home_Page'}}">
+        <div class="ui secondary menu" >
           <h1 class="ui header">
             <i class="shopping cart icon"></i>
-            <div class="content">
-              IT EQUIPMENT CHECKOUT
+            <div class="content" >
+              <a href="{{pathFor 'Home_Page'}}">
+                IT EQUIPMENT CHECKOUT
+              </a>
+
             </div>
           </h1>
-          <div class="ui secondary right aligned menu" href="{{pathFor 'Home_Page'}}">
+          <div class="ui secondary right aligned menu" >
           <a class="item" href="{{pathFor 'Add_Stuff_Page' _id=stuff._id}}">
             NEW CHECKOUT
           </a>

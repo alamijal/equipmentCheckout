@@ -1,8 +1,3 @@
-.ui.floated.left.top.image{
-  padding-top:25px;
-  padding-bottom:0px;
-}
-
 
 .ui.menu {
   padding-left :20px;
@@ -14,70 +9,9 @@ h1 {
 
 }
 
-.ui.top.attached.left.floated.header {
-  background-color: transparent;
-  color: white;
-  border:0px;
-  font-size: 3.0em;
-}
-.ui.top.header {
-  color: white;
-  padding-bottom:20px;
-  padding-top:10px;
-  position: absolute;
-  top: 50px;
-  left: 16px;
-
-}
-.ui.bottom.header {
-  color: black;
-
-  font-size:4.0em;
-}
-
-.ui.bottom.attached.right.floated.header {
-  background-color: transparent;
-  border:0px;
-  font-size: 4.0em;
-}
-.top.image {
-  padding-top: 0px;
-
-}
-
-
 .container {
   position: relative;
   color: white;
-}
-
-
-.container.footer {
-  width: 100%;
-  text-align: center;
-  color: black;
-  padding-top: 50px;
-  background-color:#cccccc;
-  margin-right: 0px;
-  padding-right: 0px;
-  padding-bottom: 50px;
-
-}
-
-.ui.search.grid {
-  background-color:#F6F5F2;
-  padding-top:50px;
-  padding-bottom: 50px;
-  padding-right:50px;
-  padding-left: 50px;
-  width: 100%;
-}
-.ui.very.relaxed.grid {
-  padding-top:50px;
-  padding-bottom: 50px;
-  padding-right:50px;
-  padding-left: 50px;
-  opacity: 0.8;
 }
 
 h2 {
@@ -87,12 +21,6 @@ h2 {
 
 }
 
-.ui.image.container {
-  padding-top:20px;
-  height:280px;
-  width: 250px;
-  background-color: white;
-}
 .homepage.container {
 margin-top:5%;
 }
@@ -105,28 +33,10 @@ body, html {
   /* The image used */
 
 }
-.center.aligned.button {
-  padding-right: 35%;
-  padding-left: 41%;
-
+.ui.borderless.top.aligned.menu {
+  border: 1px solid rgba(34, 36, 38, 0.15);
 }
-
-
-.pre {
-  white-space: pre-wrap;
-}
-
-
-.ui.fluid.centered.card {
-  background-color:rgba(255,255,255,0.9);
-
-}
-.ui.search.container {
-  width:100%;
-  background-color: #F6F5F2;
-  padding-bottom: 3.5%;
-}
-.ui.borderless.main.button.menu {
+div.ui.borderless.main.menu {
+ margin-top:5%;
   border: none;
 }
-
