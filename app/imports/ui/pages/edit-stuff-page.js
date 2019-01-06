@@ -39,3 +39,9 @@ Template.Edit_Stuff_Page.events({
   },
 });
 
+Template.View_Comments.helpers({
+  getDoc() {
+    return Stuff.findOne(FlowRouter.getParam('_id'));
+  },
+});
+
