@@ -7,14 +7,9 @@
           <div class="ui header"><h2>CURRENT CHECKOUTS</h2></div>
             <div class="right menu">
               <div class="item">
-                <button class="ui positive button">
+                <a href="{{pathFor 'Add_Stuff_Page' _id=stuff._id}}" class="ui positive button">
                   NEW CHECKOUT
-                </button>
-              </div>
-              <div class="item">
-                <button class="ui positive button">
-                  CHECK-IN
-                </button>
+                </a>
               </div>
             </div>
 
@@ -48,8 +43,10 @@
                 <td>{{stuff.time}}</td>
                 <td>{{stuff.equipmentName}}</td>
                 <td>{{stuff.equipmentType}}</td>
-                <td><a class="{{ isActiveRoute 'Edit'}}
+
+                  <td><a class="{{ isActiveRoute 'Edit'}}
               item" href="{{ pathFor 'View_Comments' _id=stuff._id}}">View Comments</a></td>
+              
                 <td><a class="{{ isActiveRoute 'Edit'}}
               item" href="{{ pathFor 'Edit_Stuff_Page' _id=stuff._id}}">Check-In</a></td>
 
