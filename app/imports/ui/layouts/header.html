@@ -1,13 +1,31 @@
 <template name="Header">
 
     <div class="ui borderless top aligned menu">
+      <div class="homepage container">
+        <div class="ui secondary  menu">
+          <a class="item" href="{{pathFor 'Home_Page'}}">
+            IT EQUIPMENT CHECKOUT
+          </a>
+          <a class="item" href="{{pathFor 'Add_Stuff_Page' _id=stuff._id}}">
+            NEW CHECKOUT
+          </a>
+          <a class="item" href="{{pathFor 'List_Stuff_Page' _id=stuff._id}}">
+            CURRENT CHECKOUTS
+          </a>
+          <a class="item" href="{{pathFor 'History_Page' _id=stuff._id}}">
+            CURRENT CHECKOUTS
+          </a>
+          <div class="right menu">
+            <div class="item">
+            <a href="#" class="ui item">{{> loginButtons}} </a>
+          </div>
+          </div>
+        </div>
 
-      <a class="ui floated left top image" href="{{pathFor 'Home_Page'}}" ><img src="/images/virtualcookbook.svg" width="450
-    px" ></a>  <div class="ui container">
+      </div>
 
-      <a href="#" class="right aligned item">{{> loginButtons align="right"}} </a>
+
     </div>
-  </div>
 
 </template>
 
