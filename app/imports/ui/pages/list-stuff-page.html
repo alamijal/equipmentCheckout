@@ -4,6 +4,13 @@
     <div style="padding-bottom: 110px" class="ui container">
       {{#if Template.subscriptionsReady}}
         <div class="ui header"><h2>CURRENT CHECKOUTS</h2></div>
+        <h2 style="padding-top:3.5%;" class="center aligned ui header">Search by Name</h2>
+        <div class="search">
+          <form class="center aligned button name">
+            <input type="text" id="searchValue" placeholder="Name" required>
+            <button type="submit">Search</button>
+          </form>
+        </div>
         <table style="margin-top: 20px" class="ui striped celled table">
           <thead>
           <tr>

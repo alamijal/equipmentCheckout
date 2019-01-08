@@ -15,7 +15,7 @@ Template.List_Searched_Stuff_Page_Name.helpers({
       // If search parameter is defined, filter results
       const searchVal = Session.get('searchValue');
       const searchEXP = `.*${searchVal}.*`;
-      return Stuff.find({ recipe: { $regex: searchEXP, $options: 'i' } });
+      return Stuff.find({ first: { $regex: searchEXP, $options: 'i' } });
     }
     // Otherwise, return all of the stuff
     return Stuff.find();

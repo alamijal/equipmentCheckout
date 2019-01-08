@@ -187,7 +187,7 @@
   {{/If_Logged_In}}
 </template>
 
-<template name="List_Searched_Stuff_Page_Name">
+<template name="List_Searched_Stuff_Page_Or">
   {{#If_Logged_In}}
     <div style="padding-top: 20px; padding-bottom: 300px" class="ui container">
       {{#if Template.subscriptionsReady}}
@@ -217,24 +217,45 @@
   {{/If_Logged_In}}
 </template>
 
-<template name="List_Searched_Stuff_Page_Ingredient">
+<template name="List_Searched_Stuff_Page_Name">
   {{#If_Logged_In}}
-    <div style="padding-top: 20px; padding-bottom: 300px" class="ui container">
+    <div style="padding-bottom: 110px" class="ui container">
       {{#if Template.subscriptionsReady}}
+        <div class="ui header"><h2>CURRENT CHECKOUTS</h2></div>
         <table style="margin-top: 20px" class="ui striped celled table">
           <thead>
           <tr>
-            <th>Recipe</th>
-            <th>Select</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Checkout Date</th>
+            <th>Checkout Time</th>
+            <th>Item</th>
+            <th>Equipment Type</th>
+            <th>View</th>
+            <th>Check-In</th>
+
+            {{#If_Logged_In}}
+
+            {{/If_Logged_In}}
           </tr>
           </thead>
 
           <tbody>
           {{#each stuff in stuffSearch}}
             <tr>
-              <td>{{stuff.recipe}}</td>
-              <td><a class="{{ isActiveRoute 'View_Full_Recipe'}}
-              item" href="{{ pathFor 'View_Full_Recipe' _id=stuff._id}}">View Full Recipe</a></td>
+              <td>{{stuff.first}}</td>
+              <td>{{stuff.last}}</td>
+              <td>{{stuff.date}}</td>
+              <td>{{stuff.time}}</td>
+              <td>{{stuff.equipmentName}}</td>
+              <td>{{stuff.equipmentType}}</td>
+              <td><a class="{{ isActiveRoute 'Edit'}}
+              item" href="{{ pathFor 'View_Comments' _id=stuff._id}}">View Comments</a></td>
+              <td><div class="item">
+                <a href="{{pathFor 'Edit_Stuff_Page' _id=stuff._id}}" class="ui positive button">
+                  CHECK-IN
+                </a>
+              </div></td>
 
             </tr>
           {{/each}}
